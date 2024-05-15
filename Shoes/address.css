@@ -1,0 +1,209 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 10px;
+}
+#address-form{
+  /* border: 2px solid black; */
+  width: 100%;
+  margin: 4rem auto;
+}
+#address-form h2{
+  font-size: 3rem;
+  color: #9C5DC0;
+  /* color: #0866FF; */
+  font-weight: bold;
+  text-shadow: -1px 1px 1px #7a7a7a;
+}
+#address-form hr{
+  height: .2rem;
+  /* color: black; */
+  background-color: black;
+}
+#address-form table{
+  /* border: solid 1px red; */
+  width: 50%;
+  margin: auto;
+  background-color: aliceblue;
+  /* padding: 2rem; */
+  border-radius: 1rem;
+  box-shadow: rgba(33, 120, 192, 0.292) 0px 0.0625em 0.0625em,
+   rgba(50, 90, 221, 0.502) 0px 0.125em 0.5em,
+    rgba(16, 199, 219, 0.555) 0px 0px 0px 1px inset;
+}
+#address-form table td{
+  /* border: solid 1px red; */
+  width: 100%;
+  height: 9rem;
+  font-size: 2rem;
+  position: relative;
+  text-align: center;
+}
+#address-form table td input[type="email"],#address-form table td input[type="text"],#address-form table td input[type="number"],#address-form table td input[type="tel"],#address-form table td textarea{
+  width: 90%;
+  height: 4rem;
+  padding-left: 2rem;
+  /* padding-top: .5rem; */
+  border: solid 1px #9C5DC0;
+  border-radius: .5rem;
+  text-transform: capitalize;
+  color: #0866FF;
+}
+#address-form table td textarea{
+  height: 8.5rem;
+  resize: none;
+}
+#address-form table td label{
+  position: absolute;
+  top:.5rem !important;
+  left: 5rem !important;
+  background-color: white;
+  color: #9C5DC0;
+  padding: 0 .2rem;
+  visibility: hidden;
+}
+#address-form table td span{
+  /* border: solid 1px red; */
+  position: absolute;
+  left: 0;
+  text-align: right !important;
+  float: right;
+  padding: 0 3rem;
+  width: 100%;
+  color: red;
+}
+#address-form table td button{
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  color: white;
+  background-color: #0866FF;
+}
+#address-form table td .fa-location-dot{
+  /* position: absolute; */
+  /* left: 18.5rem;
+  top: 3.5rem; */
+  color: black;
+}
+.address-popup{
+  position: fixed;
+  top: -11rem;
+  left: 0;
+  width: 100%;
+  height:100vh;
+  /* background-color: yellow; */
+  background-color: black;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* border: solid 1px red; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1rem;
+  transition: .3s;
+  scale: 0;
+}
+.address-popup-div1{
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70% !important;
+  padding: 4rem;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  box-shadow: rgba(33, 120, 192, 0.292) 0px 0.0625em 0.0625em,
+   rgba(50, 90, 221, 0.502) 0px 0.125em 0.5em,
+    rgba(16, 199, 219, 0.555) 0px 0px 0px 1px inset;
+    position: relative;
+}
+.address-popup-div1 .fa-xmark{
+  position: absolute;
+  /* width: 3rem;
+  height: 3rem; */
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  background-color: red;
+  padding: 1rem 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover{
+    background-color: white;
+    color: red;
+  }
+}
+.address-popup-div2{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* row-gap: 2rem; */
+  /* border: solid 1px red; */
+}
+.address-popup-div2 #product-form{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.address-popup-div2 h2{
+  margin: auto;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #9C5DC0;
+  text-transform: uppercase;
+  text-shadow: -1px 1px 1px #7a7a7a;
+}
+.address-popup-div2 ul{
+  list-style: none;
+  display: flex;
+  column-gap: 2rem;
+  font-size: 2rem;
+}
+.address-popup-div2 button{
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #0866FF;
+  color: white;
+  border-radius: .5rem;
+  letter-spacing: .1rem;
+}
+.address-popup-div3{
+  width: 100%;
+  display: none;
+  /* border: solid 1px red; */
+}
+.address-popup-div3 p{
+  color: red;
+  font-size: 1.5rem;
+}
+.address-popup-div3 table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.address-popup-div3 table td{
+  width: 50%;
+  padding: .5rem;
+  /* border: solid 1px red; */
+  font-size: 1.5rem;
+}
+.address-popup-div3 table td input{
+  width: 100%;
+  padding: .5rem;
+  /* border: solid 1px red; */
+  font-size: 1.8rem;
+}

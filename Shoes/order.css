@@ -1,0 +1,58 @@
+.order-popup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    margin-top: 10rem;
+    /* border: solid 1px red; */
+}
+.order-popup-div1{
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 10rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    box-shadow: rgba(33, 120, 192, 0.292) 0px 0.0625em 0.0625em,
+     rgba(50, 90, 221, 0.502) 0px 0.125em 0.5em,
+      rgba(16, 199, 219, 0.555) 0px 0px 0px 1px inset;
+      position: relative;
+  }
+  .order-popup-div2{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .order-popup-div2 h2{
+    margin: auto;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #9C5DC0;
+    text-transform: uppercase;
+    text-shadow: -1px 1px 1px #7a7a7a;
+  }
+  .order-popup-div2 p{
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(11, 61, 11);
+    text-transform: uppercase;
+    text-shadow: -1px 1px 1px #7a7a7a;
+  }
+  .order-popup-div2 button{
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #0866FF;
+    color: white;
+    border-radius: .5rem;
+    letter-spacing: .1rem;
+  }

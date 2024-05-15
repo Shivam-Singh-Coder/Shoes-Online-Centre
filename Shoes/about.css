@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    /* border: 2px solid red; */
+    height: 7rem;
+    background-color: navy;
+    color: white;
+    box-shadow: 1px 1px 2px black;
+    z-index: 1111;
+}
+
+header h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    height: 7rem;
+}
+
+.head .left {
+    /* border: 1px solid blue; */
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.head .left i {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+#cross {
+    display: none;
+}
+
+.head .left label {
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.head .right {
+    /* border: 1px solid blue; */
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 15%;
+    font-size: 2.5rem;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.head .right i {
+    cursor: pointer;
+}
+
+nav {
+    position: sticky;
+    top: 6.5rem;
+    /* margin-top: 5rem; */
+    overflow: hidden;
+    z-index: 999;
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 0rem;
+    transition: 0.2s;
+    background-color: rgb(62, 90, 97);
+    color: white;
+}
+
+nav ul {
+    font-size: 2.5rem;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+.d1 {
+    margin-top: 5rem;
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.d1 div {
+    padding: 2rem;
+    /* border: 2px solid blue; */
+    width: 50%;
+    /* height: 10rem; */
+}
+
+h4 {
+    font-size: 5rem;
+    padding-bottom: 5%;
+    position: relative;
+    padding-left: 1rem;
+}
+
+h4:after {
+    position: absolute;
+    right:75%;
+    top: 55%;
+    content: '';
+    height: 3px;
+    width: 20%;
+    border-radius: 50%;
+    background: green;
+}
+
+h6 {
+    font-size: 2rem;
+    padding: 1rem;
+    padding-bottom: 5%;
+}
+
+p {
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    text-align: justify;
+    padding: 1rem;
+}
+
+.d2 {
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:rgb(21, 19, 159);
+    /* background-color: rgb(5, 5, 157); */
+
+}
+
+.d2 div {
+    padding: 2rem;
+    /* border: 2px solid black; */
+    width: 30%;
+}
+
+.d2 div i {
+    font-size: 5rem;
+    position: relative;
+    left: 45%;
+    color: white;
+}
+
+h5 {
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.d2 div p {
+    font-size: 1.5rem;
+    color: white;
+    /* color: rgb(200, 195, 195); */
+}
+
+.d3 {
+    margin-top: 3%;
+    /* border: 2px solid red; */
+    width: 97%;
+    position: relative;
+    /* left: 5%; */
+    display: flex;
+}
+
+h2 {
+    margin-top: 3%;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: .1rem;
+    position: relative;
+}
+h2:after {
+    position: absolute;
+    left: 43%;
+    /* right:75%; */
+    top: 95%;
+    content: '';
+    height: 3px;
+    width: 14%;
+    border-radius: 50%;
+    background: green;
+}
+
+.d3 div {
+    padding: 2rem;
+    /* border: 2px solid black; */
+    width: 25%;
+    padding: 5%;
+    margin-left: 3%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.d3 div img {
+    border-radius: 50%;
+    position: relative;
+    left: 1rem;
+    height: 15rem;
+    width: 15rem;
+    /* border: 2px solid red; */
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+.d3 div p{
+    color: blue;
+}
+
+footer {
+    /* background-color: rgb(222, 222, 255); */
+    position: relative;
+    background-color: rgb(58, 58, 139);
+    color: white;
+    margin-top: 10rem;
+    min-height: 35rem;
+    position: relative;
+    font-weight: 800;
+    /* border: 1px solid black; */
+
+}
+
+.footer-up {
+    position: absolute;
+    width: 90%;
+    top: -5rem;
+    left: 5%;
+    height: 13rem;
+    font-size: 2rem;
+    /* border: 1px solid red; */
+    box-shadow: 2px 2px 5px black;
+    display: flex;
+    /* background-color: rgb(24, 207, 207); */
+    background-color: rgb(238, 14, 59);
+    border-radius: 2rem 2rem 0 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-up div {
+    width: 25%;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-right: 2px solid white;
+}
+
+.footer-up div i {
+    font-size: 2rem;
+}
+
+.flogo {
+    position: absolute;
+    border-right: 1px solid black;
+    top: 35%;
+    height: 50%;
+    width: 20%;
+    left: 5%;
+}
+
+.flogo div {
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.flogo div label {
+    /* padding-left: 20%; */
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.social {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2.5rem;
+}
+
+.social i {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.social i:hover {
+    scale: 1.5;
+}
+
+
+.links {
+    border-right: 1px solid black;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    height: 50%;
+    width: 30%;
+}
+
+.links i {
+    color: black;
+}
+
+.links h2 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    color: gold;
+}
+
+.links ul {
+    text-align: center;
+    padding-left: 4rem;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.map {
+    position: absolute;
+    right: 5%;
+    top: 35%;
+    /* border: 1px solid red; */
+    height: 50%;
+    width: 35%;
+}

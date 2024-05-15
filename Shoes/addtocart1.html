@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add To Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="shoes.js"></script>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        .title {
+            margin-bottom: 5vh;
+        }
+
+        section{
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .card {
+            margin: auto;
+            max-width: 950px;
+            width: 90%;
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 1rem;
+            border: transparent;
+        }
+
+        @media(max-width:767px) {
+            .card {
+                margin: 3vh auto;
+            }
+        }
+
+        .cart {
+            background-color: #fff;
+            padding: 4vh 5vh;
+            border-bottom-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+        }
+
+        @media(max-width:767px) {
+            .cart {
+                padding: 4vh;
+                border-bottom-left-radius: unset;
+                border-top-right-radius: 1rem;
+            }
+        }
+
+        .summary {
+            background-color: #ddd;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            padding: 4vh;
+            color: rgb(65, 65, 65);
+        }
+
+        @media(max-width:767px) {
+            .summary {
+                border-top-right-radius: unset;
+                border-bottom-left-radius: 1rem;
+            }
+        }
+
+        .summary .col-2 {
+            padding: 0;
+        }
+
+        .summary .col-10 {
+            padding: 0;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .title b {
+            font-size: 2.5rem;
+        }
+
+        .main {
+            margin: 0;
+            padding: 2rem 0;
+            width: 100%;
+            /* border: 2px solid red; */
+        }
+
+        .col-2,
+        .col {
+            padding: 0 1vh;
+        }
+
+        a {
+            padding: 0 1vh;
+        }
+
+        .close {
+            margin-left: auto;
+            font-size: 2.5rem;
+        }
+
+        img {
+            width: 10rem;
+        }
+
+        .back-to-shop {
+            margin-top: 4.5rem;
+        }
+
+        h5 {
+            margin-top: 4vh;
+        }
+
+        hr {
+            margin-top: 1.25rem;
+        }
+
+        form {
+            padding: 2vh 0;
+        }
+
+        select {
+            border: 1px solid rgba(0, 0, 0, 0.137);
+            padding: 1.5vh 1vh;
+            margin-bottom: 4vh;
+            outline: none;
+            font-size: 2rem;
+            width: 100%;
+            background-color: rgb(247, 247, 247);
+        }
+
+        input {
+            border: 1px solid rgba(252, 21, 21, 0.137);
+            padding: 1vh;
+            margin-bottom: 4vh;
+            outline: none;
+            width: 100%;
+            font-size: 2rem;
+            background-color: rgb(247, 247, 247);
+        }
+
+        input:focus::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        .btn {
+            background-color: #000;
+            border-color: #000;
+            color: white;
+            width: 100%;
+            font-size: 2rem;
+            margin-top: 4vh;
+            padding: 1vh;
+            border-radius: 0;
+        }
+
+        .btn:focus {
+            box-shadow: none;
+            outline: none;
+            box-shadow: none;
+            color: white;
+            -webkit-box-shadow: none;
+            /* -webkit-user-select: none; */
+            transition: none;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        a {
+            color: black;
+            font-size: 2rem;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .col div {
+            font-size: 1.7rem;
+        }
+
+        .col {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        span {
+            font-size: 2rem;
+        }
+
+        h5 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="font-weight: bold;">Shoes Online Centre</h1>
+        <div class="head">
+            <div class="left">
+                <i class="fa-solid fa-bars" id="bars"></i>
+                <i class="fa-solid fa-close" id="cross"></i>                <label for="" style="cursor: pointer;" onclick="location.href='login.html'"> Login / Register </label>
+
+            </div>
+            <div class="right">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-bag-shopping" onclick="location.href='addtocart1.html'"></i>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul type="none">
+            <li><a style="color: white;" href="index.html">Home</a></li>
+            <li><a style="color: white;" href="blogdetails.html">Blog</a></li>
+            <li><a style="color: white;" href="aboutus.html">About</a></li>
+            <li onclick="sessionStorage.setItem('contact','1');location.href='index.html'">Contact-Us</li>
+        </ul>
+    </nav>
+    <section>
+        <div class="d1" style="margin-top:7%;">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-12 cart">
+                        <div class="title">
+                            <div class="row">
+                                <div class="col">
+                                    <h4><b>Shopping Cart</b></h4>
+                                </div>
+                                <!-- <div class="col align-self-center text-right text-muted" style="font-size: 2rem;">3
+                                    items</div> -->
+                            </div>
+                        </div>
+                        <!-- <div class="row border-top border-bottom">
+                            <div class="row main align-items-center">
+                                <div class="col-2">
+                                    <img class="img-fluid" src="men1.png">
+                                </div>
+                                <div class="col">
+                                    <div class="row text-muted">Shoes</div>
+                                    <div class="row">Bata</div>
+                                </div>
+                                <div class="col">
+                                    <a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a>
+                                </div>
+                                <div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM01</span></div>
+                            </div>
+                        </div> -->
+                        <div class="back-to-shop">
+                            <a href="index.html">&leftarrow;</a><span class="text-muted">Back to shop</span>
+                        </div>
+                        <div class="order-place" style="float: right;margin-top:-5rem;">
+                            <button style="background-color: #04AA6D;border: none;color: white;padding: 15px 32px;
+                            text-align: center;text-decoration: none;display: inline-block;font-size: 2rem;cursor: pointer;border-radius:2rem;" onclick="location.href='address.html'">Place Order</button>
+                            <!-- <a href="index.html">&leftarrow;</a><span class="text-muted">Back to shop</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-up">
+            <div style="width: 20%;">
+                <i class="fa-solid fa-phone"></i><br><br>
+                +91 7700*****
+            </div>
+            <div style="width: 20%;">
+                <i class="fa-brands fa-whatsapp"></i><br><br>
+                +91 7700*****
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i><br><br>
+                krkunn*****@gmail.com
+            </div>
+            <div style="border: none;">
+                <i class="fa-solid fa-location-dot"></i><br><br>
+                2nd Floor, Mithulok, Khetan Lane, Boring Canal Road, Near Bharat Petrol Pump, Opposite of New Tanishq Showroom, Patna, Bihar- 800001
+            </div>
+        </div>
+        <div class="flogo">
+            <div>
+                <label for="">Shoes</label>
+            </div>
+            <div class="social">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+        </div>
+        <!-- <div class="links">
+            <h2>Quick Links</h2>
+            <ul type="none">
+                <li> Log In</li>
+                <li> Sign Up</li>
+                <li> </li>
+                <li> Products</li>
+                <li> Testimonials</li>
+                <li> Contact-Us</li>
+            </ul>
+        </div> -->
+
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.6987966567876!2d85.11724797517394!3d25.614923214655015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58ee6d975d47%3A0xbc5045cc2b8ae11c!2sRays%20Edutech%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1698580783201!5m2!1sen!2sin"
+                style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+</body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if (localStorage.getItem('item') !=null){
+                var item = localStorage.getItem('item');
+                if(item.includes(',')){
+                    for(var a=0;a<item.split(',').length;a++){
+                        if (item.split(',')[a].trim()=='ITM01'){
+                            $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men1.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM01</span></div></div></div>')
+                        }
+                        else if (item.split(',')[a].trim()=='ITM02'){
+                            $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men2.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM02</span></div></div></div>')
+                        }
+                        else if (item.split(',')[a].trim()=='ITM03'){
+                            $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men3.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM03</span></div></div></div>')
+                        }
+                        else if (item.split(',')[a].trim()=='ITM04'){
+                            $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men4.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM04</span></div></div></div>')
+                        }
+                        else if (item.split(',')[a].trim()=='ITM05'){
+                            $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men5.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM05</span></div></div></div>')
+                        }
+                    }
+                }
+                else{
+                    if (item.trim()=='ITM01'){
+                        $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men1.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM01</span></div></div></div>')
+                    }
+                    else if (item.trim()=='ITM02'){
+                        $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men2.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM02</span></div></div></div>')
+                    }
+                    else if (item.trim()=='ITM03'){
+                        $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men3.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM03</span></div></div></div>')
+                    }
+                    else if (item.trim()=='ITM04'){
+                        $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men4.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM04</span></div></div></div>')
+                    }
+                    else if (item.trim()=='ITM05'){
+                        $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src="men5.png"></div><div class="col"><div class="row text-muted">Shoes</div><div class="row">Bata</div></div><div class="col"><a style="cursor: pointer;">-</a><a class="border">1</a><a style="cursor: pointer;">+</a></div><div class="col"> 250.00 <span class="close" style="cursor: pointer;">&#10005;</span><span style="display:none;">ITM05</span></div></div></div>')
+                    }
+                }
+            }
+            else{
+                $('.order-place').css('display','none');
+                $('.cart .title').after('<div class="row border-top border-bottom"><div class="row main align-items-center" style="font-size:1.5rem;font-weight:bold;background-color:red;color:white;padding-left:2rem;">No Item In Cart!!</div></div>');
+            }
+            $('.close').click(function(){
+                var spanContent=$(this).siblings('span').html().trim();
+                var inputContent=localStorage.getItem('item');
+                if (inputContent.includes(',')){
+                    inputContent=inputContent.split(',');
+                    for(var a=0;a<inputContent.length;a++){
+                        if(inputContent[a]===spanContent)
+                            inputContent.splice(a, 1);
+                    }
+                    localStorage.setItem('item',inputContent);
+                    location.reload();
+                }
+                else{
+                    localStorage.removeItem('item');
+                    location.reload();
+                }
+            });
+        });
+    </script>
+</html>

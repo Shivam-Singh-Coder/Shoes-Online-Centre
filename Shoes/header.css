@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1111;
+    /* border: 2px solid red; */
+    height: 7rem;
+    background-color: navy;
+    color: white;
+    box-shadow: 1px 1px 2px black;
+}
+
+header h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    height: 7rem;
+}
+
+.head .left {
+    /* border: 1px solid blue; */
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.head .left i {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+#cross {
+    display: none;
+}
+
+.head .left label {
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.head .right {
+    /* border: 1px solid blue; */
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 15%;
+    font-size: 2.5rem;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.head .right i {
+    cursor: pointer;
+}
+
+nav {
+    position: fixed;
+    z-index: 111;
+    width: 100%;
+    top: 7rem;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    height: 0rem;
+    transition: 0.2s;
+    background-color: rgb(62, 90, 97);
+    color: white;
+}
+
+nav ul {
+    font-size: 2.5rem;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+nav ul li:hover{
+    scale: 1.2;
+}
+
+@media(max-width:950px) {
+    html {
+        font-size: 45% !important;
+    }
+}
+
+@media(max-width:750px) {
+    html {
+        font-size: 35% !important;
+    }
+}
+
+@media(max-width:650px) {
+    .head .left {
+        width: 35%;
+    }
+
+    .head .right {
+        width: 30%;
+    }
+
+    nav {
+        position: absolute;
+        left: 0;
+        z-index: 9999;
+        width: 40%;
+        /* border: 1px solid red; */
+    }
+
+    nav ul {
+        display: block;
+        text-align: left;
+        line-height: 4rem;
+        padding-left: 4rem;
+    }
+}

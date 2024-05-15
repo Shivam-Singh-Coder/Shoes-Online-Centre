@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Your Journey</title>
+  <link rel="shortcut icon" type="image/png" href="shoes-logo.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="address.css">
+  <style>
+    .showmessages{
+      position:fixed;
+      top:0;
+      left:0;
+      z-index: 1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:5rem;
+      width:100%;
+      scale:0;
+    }
+    .showmessages div{
+      margin:auto;
+      padding:1rem 2rem;
+      background-color:#9C5DC0;
+      border-radius:10rem;
+    }
+    .showmessages div span{
+      color:white;
+      font-size:2rem;
+      font-weight:bold;
+      letter-spacing:.1rem;
+    }
+    .shoping__cart__item img { height: 30%; width: 30%; } @media (max-width: 650px) {.shoping__cart__item img { height: 80% !important; width: 80% !important; }tbody tr td{padding: 3rem;} } 
+  </style>
+</head>
+
+<body oncontextmenu="return false;">
+  <header>
+    <h1>Shoes Online Centre</h1>
+    <div class="head">
+        <div class="left">
+            <i class="fa-solid fa-bars" id="bars"></i>
+            <i class="fa-solid fa-close" id="cross"></i>
+            <label for="" style="cursor: pointer;" onclick="location.href='login.html'"> Login / Register </label>
+
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-bag-shopping" onclick="location.href='addtocart1.html'"></i>
+        </div>
+    </div>
+</header>
+<nav>
+    <ul type="none">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogdetails.html">Blog</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li onclick="sessionStorage.setItem('contact','1');location.href='index.html'">Contact-Us</li>
+    </ul>
+</nav>
+<div class="container" style="margin-top:8rem;">
+    <div id="address-form">
+        <h2>Enter Delivery Address</h2><hr><br>
+        <table>
+            <tr>
+                <td>
+                    <label for="fullname">Full name</label>
+                    <input type="text" autocomplete="off" required id="fullname" oninput="showlabel('#fullname')"  minlength="3" placeholder="Name" >
+                    <br><span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mobilenumber">Mobile no.</label>
+                    <input type="text" autocomplete="off" required id="mobilenumber" oninput="showlabel('#mobilenumber')" placeholder="Mobile no." maxlength="10" minlength="10">
+                    <br><span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email ID</label>
+                    <input type="email" style="text-transform: lowercase;" autocomplete="off" required id="email" oninput="showlabel('#email')" placeholder="Email ID" />
+                    <br><span></span>
+                </td>
+            </tr>
+            <tr style="height:15rem;">
+                <td><label for="address">Address</label>
+                    <textarea name="" autocomplete="off" oninput="showlabel('#address')" id="address" required="true"  placeholder="Street/ District/ State"></textarea>
+                    <br><span></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pincode">Pincode</label>
+                    <input type="text" autocomplete="off" oninput="showlabel('#pincode')"  id="pincode" placeholder="Pincode" minlength="6"  maxlength="6" required>
+                    <br><span></span>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <button id="useaddress"><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;Use this address</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<footer>
+    <div class="footer-up">
+        <div style="width: 20%;">
+            <i class="fa-solid fa-phone"></i><br><br>
+            +91 7700*****
+        </div>
+        <div style="width: 20%;">
+            <i class="fa-brands fa-whatsapp"></i><br><br>
+            +91 7700*****
+        </div>
+        <div>
+            <i class="fa-solid fa-envelope"></i><br><br>
+            krkunn*****@gmail.com
+        </div>
+        <div style="border: none;">
+            <i class="fa-solid fa-location-dot"></i><br><br>
+            Rays Edutech Pvt. Ltd. Lorem ipsum dolor sit amet.
+            Rays Edutech Pvt. Ltd. Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+    <div class="flogo">
+        <div>
+            <label for="">Shoes</label>
+        </div>
+        <div class="social">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+    </div>
+    <!-- <div class="links">
+        <h2>Quick Links</h2>
+        <ul type="none">
+            <li> Log In</li>
+            <li> Sign Up</li>
+            <li> </li>
+            <li> Products</li>
+            <li> Testimonials</li>
+            <li> Contact-Us</li>
+        </ul>
+    </div> -->
+
+
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.6987966567876!2d85.11724797517394!3d25.614923214655015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58ee6d975d47%3A0xbc5045cc2b8ae11c!2sRays%20Edutech%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1698580783201!5m2!1sen!2sin"
+            style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+  function showlabel(iid) {
+      if ($(iid).val().trim() != '')
+        $(iid).siblings("label").css("visibility", "visible");
+      else{
+        $(iid).siblings("label").css("visibility", "hidden");
+      }
+  }
+  $(document).ready(function(){
+      $('#address-form table td #useaddress').click(function(){
+          var name=$('#fullname').val().trim();
+          var mobile_no=$('#mobilenumber').val().trim();
+          var address=$('#address').val().trim();
+          var pincode=$('#pincode').val().trim();
+          var email=$('#email').val().trim();
+          if (name!='' && mobile_no!='' && address!='' && pincode!="" && email!=""){
+              if(name.length<3){
+                  alert('Please Enter Your Name (at least three chahracters)!!')
+              }
+              else if(mobile_no.length<10){
+                  alert('Mobile Number should be 10 digits!!')
+              }
+              else if(pincode.length<6){
+                  alert('Pincode should be 6 digits!!')
+              }
+              else if(name.length>=3 && mobile_no.length==10,pincode.length>=6){
+                $.ajax({
+                  url: 'shoes.py',
+                  method: 'POST',
+                  data:{
+                      cond:'address',
+                      name:name,
+                      mobile_no:mobile_no,
+                      address:address,
+                      pincode:pincode,
+                      email:email,
+                      itemid:localStorage.getItem('item').trim(),
+                  },
+                  success: function(response) {
+                      if(response==1){
+                        location.href="order.html";
+                      }
+                      else{
+                        alert("Something went wrong. Please try again later!")
+                      }
+                  }
+                });
+              }
+          }
+          else{
+            swal("Error!", "Please fill all fields.", "error");
+          }
+      });
+  });
+</script>
+  </body>
+  </html>
