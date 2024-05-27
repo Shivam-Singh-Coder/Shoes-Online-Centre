@@ -124,6 +124,9 @@ nav ul li:hover{
 }
 
 @media(max-width:650px) {
+    .heading-tile{
+        font-size: 4rem;
+    }
     .head .left {
         width: 35%;
     }
