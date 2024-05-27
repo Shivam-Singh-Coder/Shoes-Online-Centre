@@ -115,17 +115,23 @@ nav ul li:hover{
     html {
         font-size: 45% !important;
     }
+    .heading-tile{
+        font-size: 3rem;
+    }
 }
 
 @media(max-width:750px) {
     html {
         font-size: 35% !important;
     }
+    .heading-tile{
+        font-size: 3rem;
+    }
 }
 
 @media(max-width:650px) {
     .heading-tile{
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .head .left {
         width: 35%;
